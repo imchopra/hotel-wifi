@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import lobby from "./assets/lobby.jpg";
+
 import "./App.css";
 
 function App() {
@@ -14,7 +16,7 @@ function App() {
     <div
       className="App"
       style={{
-        backgroundImage: `url('https://images.unsplash.com/photo-1560347876-aeef00ee58a1?auto=format&fit=crop&w=1600&q=80')`,
+        backgroundImage:  `url(${lobby})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         height: "100vh",
@@ -24,10 +26,10 @@ function App() {
     >
         {/* Header */}
       <header className="header">
-        <h1>Lemon Hotel</h1>
-        <span>Premium Wi-Fi Access</span>
+        <h1>Lemon Hotels</h1>
+        <span>Wi-Fi Access</span>
       </header>
-      
+
       <div className="overlay">
         <div className="form-box">
           <h1>Hotel Wi-Fi Access</h1>
