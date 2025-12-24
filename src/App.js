@@ -22,6 +22,12 @@ function App() {
         position: "relative",
       }}
     >
+        {/* Header */}
+      <header className="header">
+        <h1>Lemon Hotel</h1>
+        <span>Premium Wi-Fi Access</span>
+      </header>
+      
       <div className="overlay">
         <div className="form-box">
           <h1>Hotel Wi-Fi Access</h1>
