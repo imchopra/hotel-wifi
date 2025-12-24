@@ -45,6 +45,10 @@ function App() {
           </form>
         </div>
       </div>
+      {/* Footer */}
+      <footer className="footer">
+        © {new Date().getFullYear()} Vasu Chopra · All rights reserved
+      </footer>
     </div>
   );
 }
