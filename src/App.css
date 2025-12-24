@@ -19,6 +19,25 @@
   width: 300px;
 }
 
+/* Transparent header */
+.header {
+  padding: 20px 40px;
+  color: white;
+  background: rgba(0, 0, 0, 0.35);
+  display: flex;
+  flex-direction: column;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 26px;
+}
+
+.header span {
+  font-size: 14px;
+  opacity: 0.85;
+}
+
 .form-box h1 {
   margin-bottom: 20px;
 }
@@ -45,3 +64,4 @@
 .form-box button:hover {
   background-color: #0f78d1;
 }
+
