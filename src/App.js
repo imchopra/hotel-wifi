@@ -4,12 +4,12 @@ import lobby from "./assets/lobby.jpg";
 import "./App.css";
 
 function App() {
-  const [room, setRoom] = useState("");
-  const [lastName, setLastName] = useState("");
+
+  const [coupouncode, setcoupouncode] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert(`Room: ${room}, Last Name: ${lastName}`);
+    alert(`Coupoun Code: ${coupouncode}`);
   };
 
   return (
@@ -36,16 +36,9 @@ function App() {
           <form onSubmit={handleSubmit}>
             <input
               type="text"
-              placeholder="Room Number"
-              value={room}
-              onChange={(e) => setRoom(e.target.value)}
-              required
-            />
-            <input
-              type="text"
-              placeholder="Last Name"
-              value={lastName}
-              onChange={(e) => setLastName(e.target.value)}
+              placeholder="Coupoun Code"
+              value={coupouncode}
+              onChange={(e) => setcoupouncode(e.target.value)}
               required
             />
             <button type="submit">Connect</button>
