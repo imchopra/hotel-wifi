@@ -19,9 +19,9 @@ function App() {
         backgroundImage:  `url(${lobby})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
-        height: "100vh",
-        width: "100%",
-        position: "relative",
+        minHeight: "100vh",
+        display: "flex",    
+        flexDirection: "column" 
       }}
     >
         {/* Header */}
