@@ -22,6 +22,8 @@
 /* Transparent header */
 .header {
   padding: 20px 40px;
+  color: rgb(0, 0, 0);
+  background: rgba(255, 236, 95, 0.847);
   display: flex;
   flex-direction: column;
 }
