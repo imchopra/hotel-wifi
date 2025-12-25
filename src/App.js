@@ -1,15 +1,20 @@
 import React, { useState } from "react";
+import { BrowserRouter as Router, Routes, Route, useNavigate } from "react-router-dom";
+import Connected from "./Connected";
 import lobby from "./assets/lobby.jpg";
-
 import "./App.css";
 
-function App() {
+function Home() {
 
-  const [coupouncode, setcoupouncode] = useState("");
-
+  const [coupounCode, setcoupounCode] = useState("");
+  const navigate = useNavigate(); 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert(`Coupoun Code: ${coupouncode}`);
+     if (coupounCode === "lemon263") {
+      navigate("/connected");
+    } else {
+      alert("Invalid coupon code");
+    }
   };
 
   return (
@@ -37,8 +42,8 @@ function App() {
             <input
               type="text"
               placeholder="Coupoun Code"
-              value={coupouncode}
-              onChange={(e) => setcoupouncode(e.target.value)}
+              value={coupounCode}
+              onChange={(e) => setcoupounCode(e.target.value)}
               required
             />
             <button type="submit">Connect</button>
@@ -51,6 +56,16 @@ function App() {
       </footer>
     </div>
   );
+}
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/connected" element={<Connected />} />
+      </Routes>
+    </Router>
+      );
 }
 
 export default App;
