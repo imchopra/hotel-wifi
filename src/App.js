@@ -1,11 +1,12 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { BrowserRouter as Router, Routes, Route, useNavigate } from "react-router-dom";
 import Connected from "./Connected";
 import lobby from "./assets/lobby.jpg";
 import "./App.css";
 
 function Home() {
-
+  const [error, setError] = useState(false);
   const [coupounCode, setcoupounCode] = useState("");
   const navigate = useNavigate(); 
   const handleSubmit = (e) => {
@@ -13,7 +14,9 @@ function Home() {
      if (coupounCode === "lemon263") {
       navigate("/connected");
     } else {
-      alert("Invalid coupon code");
+        setError(true);
+        setTimeout(() => setError(false), 600);
+
     }
   };
 
@@ -31,21 +34,29 @@ function Home() {
     >
         {/* Header */}
       <header className="header">
-        <h1>Lemon Hotels</h1>
+         <h1 className="page-title">
+        <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
+        Sample Hotel
+        </Link>
+        </h1>
         <span>Wi-Fi Access</span>
       </header>
 
       <div className="overlay">
         <div className="form-box">
-          <h1>Hotel Wi-Fi Access</h1>
+          <h2 className="page-title">
+          Hotel
+          </h2>
           <form onSubmit={handleSubmit}>
             <input
               type="text"
               placeholder="Coupoun Code"
               value={coupounCode}
               onChange={(e) => setcoupounCode(e.target.value)}
+              className={error ? "input-error shake" : ""}
               required
             />
+                {error && <div className="error-text">Invalid coupon code</div>}
             <button type="submit">Connect</button>
           </form>
         </div>

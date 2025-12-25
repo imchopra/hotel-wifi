@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import lobby from "./assets/lobby.jpg";
 import "./App.css";
 
@@ -26,7 +27,11 @@ function Connected() {
     >
       {/* Header */}
       <header className="header">
-        <h1>Lemon Hotels</h1>
+        <h1 className="page-title">
+       <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
+               Sample Hotel
+      </Link>
+      </h1>
         <span>Wi-Fi Access</span>
       </header>
 
@@ -34,10 +39,10 @@ function Connected() {
       <div className="overlay">
         <div className="form-box">
           {!connected ? (
-            <h1>Connecting to WiFi...</h1>
+            <h2>Connecting to WiFi...</h2>
           ) : (
             <>
-              <h1>✅ Internet Connected!</h1>
+              <h2>✅ Internet Connected!</h2>
               <p>You can now browse freely.</p>
             </>
           )}
